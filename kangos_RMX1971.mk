@@ -4,8 +4,8 @@
 # SPDX-License-Identifer: Apache-2.0
 #
 
-# Inherit some common PixelExperience stuff.
-$(call inherit-product, vendor/kangos/config/common_full_phone.mk)
+# Inherit some common KangOS stuff.
+$(call inherit-product, vendor/kangos/config/common.mk)
 
 # Inherit from RMX1971 device.
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -30,3 +30,10 @@ BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ1A.210205.004/7038034:user/relea
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="RMX1971" \
     TARGET_DEVICE="RMX1971"
+
+# KangOS Properties
+PRODUCT_PRODUCT_PROPERTIES += \
+  ro.kangos.maintainer=narasimha_yl \
+  ro.kangos.cpu=SDM712
+
+KANGOS_BUILDTYPE := OFFICIAL
